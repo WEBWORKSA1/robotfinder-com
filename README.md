@@ -2,7 +2,7 @@
 
 **The search engine for robots.** Visitors can search a robot directory, compare models, run an ROI calculator, request quotes from several vendors, watch videos and read guides. There are also sections for jobs, contests, events and donations.
 
-The site is plain static HTML/CSS/JS, so it runs on the **free GitHub Pages** plan with no build step at deploy time.
+The site is plain static HTML/CSS/JS, so it runs on the **free GitHub Pages** plan with no build step at deploy time. Each page is a light SEO stub (title, description, canonical URL, domain banner). `render.js` then renders the page from one data file, which makes adding a robot a one-line edit.
 
 > Interested in this website/domain? → https://web.works/contact
 
@@ -18,7 +18,9 @@ The site is plain static HTML/CSS/JS, so it runs on the **free GitHub Pages** pl
 | `advertise.html`, `list-your-robot.html` | Vendor monetization |
 | `donate.html`, `jobs.html`, `contests.html`, `events.html` | Donations, hiring, contests and prizes, events |
 | `assets/js/config.js` | **Switch on AdSense, GA4, Amazon tag and donation links here** |
-| `_src/` | Generator: edit `data.py` / `content.py`, then run `python3 _src/build.py` |
+| `assets/js/site-data.js` | **All content**: robots, categories, videos, guides, FAQ |
+| `assets/js/render.js` | Page templates (header, footer, every page type) |
+| `_src/build.js` | After adding robots/guides/categories run `node _src/build.js` to regenerate page stubs + sitemap |
 | `docs/BUILD-PROMPT.md` | Business idea and phase-wise build prompt |
 
 ## Forms & email
